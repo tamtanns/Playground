@@ -1,6 +1,6 @@
 name: Simple Workflow
 
-run-name: Run of the simple workflow
+run-name: Run of the complex workflow
 
 on:
   # Workflow run trigger events
@@ -18,16 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      # By default, the runner will use Bash on Linux/MacOS runners
-      # Bash is supported on all runner types
       - name: Run a one-line script
         run: echo Hello, world!
-
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
 
       - uses: actions/setup-node@v4
       - name: Run a node command

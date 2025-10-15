@@ -1,6 +1,6 @@
 name: Filtered Runs with paths-ignore
 
-run-name: Run of the simple workflow
+run-name: Run of the Filtered Runs with paths-ignore workflow
 
 on:
   # Workflow run trigger events

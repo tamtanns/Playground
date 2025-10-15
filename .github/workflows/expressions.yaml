@@ -1,0 +1,22 @@
+name: Expression and literals
+
+run-name: Run of the expression and literals
+
+on:
+  workflow_dispatch:
+
+jobs:
+  # First job
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+      - name: Experimenting
+        run: |
+          echo $GREETING
+          echo $ADDITION
+          echo $EVENT
+        env:
+          GREETING: ${{ 'Hello' }} world
+          ADDITION: ${{ 1 == 2 }}
+          EVENT: ${{ github.event_name }}

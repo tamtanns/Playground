@@ -1,1 +1,38 @@
+name: "Lesson 2 - Exercise 2"
 
+on:
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    outputs:
+      state: ${{ step.sync_check.outputs.state }}
+    steps:
+      - name: Determine whether to run the job 'test' or halt the workflow run
+        id: sync_check
+        run: |
+          # The following will choose between 'run' and 'halt' randomly
+          # and set the output of the job to the chosen value
+          if [$((RANDOM % 2)) -eq0]; then
+            # set the output of the job to run
+            echo "state=run" >> $GITHUB_OUTPUT
+            echo "Running the job 'test'..."
+          else
+            # Set the output of the job to 'halt'
+            echo "state=halt" >> $GITHUB_OUTPUT
+            echo "Skipping the job 'test'..."
+          fi
+          
+  test:
+    # Hint: read more about job outputs here: https://docs.github.com/en/actions/...
+    # Add your solution below this line
+    if: ${{ needs.sync.outputs.state == 'run' }}
+    needs: sync
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run test suite
+        run: |
+          echo "Running tests..."
+          sleep 5 # simulate running tests
+          exit 0

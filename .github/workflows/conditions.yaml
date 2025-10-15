@@ -1,0 +1,20 @@
+name: Conditions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    if: ${{ true}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Experimenting
+        if: ${{ true}}
+        run: |
+          echo $CONTAINS
+          echo $FORMAT
+          printf "$TO_JSON"
+        env:
+          CONTAINS: ${{ contains('GitHub Actions', 'actions') }}
+          FORMAT: ${{ format('This {0} {1}', 'is', 'cool') }}
+          TO_JSON: ${{ toJSON(github.event) }}

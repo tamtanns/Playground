@@ -5,11 +5,11 @@ on:
 
 jobs:
   build:
-    if: ${{ true}}
+    if: ${{ true }}
     runs-on: ubuntu-latest
     steps:
       - name: Experimenting
-        if: ${{ true}}
+        if: ${{ true }}
         run: |
           echo $CONTAINS
           echo $FORMAT
@@ -18,3 +18,10 @@ jobs:
           CONTAINS: ${{ contains('GitHub Actions', 'actions') }}
           FORMAT: ${{ format('This {0} {1}', 'is', 'cool') }}
           TO_JSON: ${{ toJSON(github.event) }}
+  deploy:
+    if: ${{ github.triggering_actor == 'link-ghost' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run if previou job succeeds
+        run: |
+          echo "Everything is working as expected"

@@ -1,6 +1,6 @@
 name: Filtered Runs
 
-run-name: Run of the simple workflow
+run-name: Run of the Filtered Runs workflow
 
 on:
   # Workflow run trigger events

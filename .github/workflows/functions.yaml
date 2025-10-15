@@ -15,4 +15,4 @@ jobs:
         env:
           CONTAINS: ${{ contains('GitHub Actions', 'actions') }}
           FORMAT: ${{ format('This {0} {1}', 'is', 'cool') }}
-          EVENT: ${{ toJSON(github.event) }}
+          TO_JSON: ${{ toJSON(github.event) }}

@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: run a multi-line script
         run: |
-          echo "Running on: ${{ matrix.os }} version: ${{ martix.version }}"
+          echo "Running on: ${{ matrix.os }} version: ${{ matrix.version }}"

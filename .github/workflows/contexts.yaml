@@ -26,5 +26,5 @@ jobs:
     steps:
       - name: Did the previous job succeed?
         run: |
-          echo "Result: ${{ needs.build.result }}
+          echo "Result: ${{ needs.build.result }}"
     

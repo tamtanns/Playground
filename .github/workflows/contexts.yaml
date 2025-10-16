@@ -21,7 +21,7 @@ jobs:
   
   deploy:
     needs: build
-    if: ${{ github.triffering_actor == 'tamtanns' }}
+    if: ${{ github.triggering_actor == 'tamtanns' }}
     runs-on: ubuntu-latst
     steps:
       - name: Did the previous job succeed?

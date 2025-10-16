@@ -1,0 +1,22 @@
+name: Concurrency groups
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  matrix_tests:
+    strategy:
+      matrix:
+        version: ["0.1.0", "0.1.1"]
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    concurrency:
+      group: ${{ github.job }} - ${{ matrix.os }}
+    steps:
+      - name: run a multi-line script
+        run: |
+          echo "Running on: ${{ matrix.os }} version: ${{ matrix.version }}"

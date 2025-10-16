@@ -10,7 +10,7 @@ jobs:
       - name: Experimenting
         run: |
           echo "$EVENT_NAME"
-          echo "$HED REF: $HEAD_REF"
+          echo "$HEAD REF: $HEAD_REF"
           echo "$BASE REF: $BASE_REF"
           echo "REPO: $REPO"
         env:

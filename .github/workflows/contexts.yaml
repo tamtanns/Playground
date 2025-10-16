@@ -15,9 +15,9 @@ jobs:
           echo "REPO: $REPO"
         env:
           EVENT_NAME: ${{ github.event_name }}
-          HEAD_REF: ${{ github.head_ref }}
-          BASE_REF: ${{ github.base_ref }}
-          REPO: ${{ github.repository }}
+          HEAD_REF: ${{ github.head_ref || 'not available' }}
+          BASE_REF: ${{ github.base_ref || 'not available' }}
+          REPO: ${{ github.repository || 'not available' }}
   
   deploy:
     needs: build

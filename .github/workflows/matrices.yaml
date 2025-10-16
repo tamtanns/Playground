@@ -1,7 +1,7 @@
 name: Matrices
 
 on:
-  worflow-dispatch:
+  workflow-dispatch:
 
 jobs:
   matrix_tests:

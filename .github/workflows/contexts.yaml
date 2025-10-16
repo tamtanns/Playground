@@ -10,8 +10,8 @@ jobs:
       - name: Experimenting
         run: |
           echo "$EVENT_NAME"
-          echo "HEAD REF: $HEAD_REF"
-          echo "BASE REF: $BASE_REF"
+          echo "HEAD_REF: $HEAD_REF"
+          echo "BASE_REF: $BASE_REF"
           echo "REPO: $REPO"
         env:
           EVENT_NAME: ${{ github.event_name }}

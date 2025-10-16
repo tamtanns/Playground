@@ -22,7 +22,7 @@ jobs:
   deploy:
     needs: build
     if: ${{ github.triggering_actor == 'tamtanns' }}
-    runs-on: ubuntu-latst
+    runs-on: ubuntu-latest
     steps:
       - name: Did the previous job succeed?
         run: |

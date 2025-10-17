@@ -1,0 +1,23 @@
+name: "lesson 4 - Exercise 4"
+
+on:
+  push:
+    branches:
+      - main
+      - "releases/[0-9]"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ gethub.ref }}
+  cancel-in-progress: ${{ contains(github.ref, 'releases/') }}
+
+jobs:
+  release:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: build and release
+        run: |
+          echo "building branch: ${{ github.ref }} for os: ${{ matrix.os }}"
+          sleep 10

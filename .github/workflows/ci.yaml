@@ -1,0 +1,12 @@
+name: "Continuous Integration"
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    uses: LeariningGHActions/microservices-workflow/.github/workflows/microservices-ci.yaml@main
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN}}

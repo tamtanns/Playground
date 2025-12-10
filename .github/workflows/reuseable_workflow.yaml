@@ -1,3 +1,5 @@
+name: "Lesson 3 - Exercise 1 - Reusable"
+
 on:
     workflow_call:
       inputs:

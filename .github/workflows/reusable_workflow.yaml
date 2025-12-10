@@ -1,4 +1,4 @@
-name: "Lesson 3 - Exercise 1 - Reusable"
+name: "Reusable Workflow"
 
 on:
     workflow_call:

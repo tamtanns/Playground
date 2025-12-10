@@ -1,9 +1,10 @@
 on:
-    workflow_dispatch:
+    workflow_call:
       inputs:
           actor:
               description: "The person who will receive the greeting"
               required: true
+              type: strin
 
 jobs:
     greeting:
